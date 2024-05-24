@@ -1,0 +1,43 @@
+secrets:
+    database_password:
+        file: ./build/secrets/DATABASE_PASSWORD_FILE
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: ./build/Dockerfile
+        volumes:
+            - ./code/config/wp-config.php:/var/www/html/wp-config.php:ro
+            - ./code/themes/project-uno:/var/www/html/wp-content/themes/project-uno:ro
+            - ./code/uploads:/var/www/html/wp-content/uploads:rw
+        environment:
+            DB_HOST: db
+            DB_NAME: project-uno
+            DB_USER: rolls
+            DB_PASSWORD_FILE: /run/secrets/DATABASE_PASSWORD_FILE
+            WP_DEBUG: true
+            WP_DEBUG_LOG: true
+        secrets:
+            - source: database_password
+              target: DATABASE_PASSWORD_FILE
+        ports:
+            - 8100:8080
+    db:
+        image: docker.io/library/mysql:8-oracle
+        volumes:
+            - ./build/fixtures:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_DATABASE: project-uno
+            MYSQL_USER: rolls
+            MYSQL_PASSWORD_FILE: /run/secrets/DATABASE_PASSWORD_FILE
+            MYSQL_RANDOM_ROOT_PASSWORD: yes
+        secrets:
+            - source: database_password
+              target: DATABASE_PASSWORD_FILE
+    phpmyadmin:
+        image: phpmyadmin:latest
+        depends_on:
+            - db
+        ports:
+            - 1000:80

@@ -1,0 +1,49 @@
+/*
+Theme Name: Project uno
+Author: Quentin Adadain
+Author URI: https://wordpress.org
+Description: This is à web app for ...
+Text Domain: qy1
+*/
+@import "assets/css/variables.css";
+@import "assets/css/navbar.css";
+@import "assets/css/footer.css";
+
+
+html {
+    min-width: 375px;
+}
+
+html body {
+    margin: 0;
+    font-family: var(--montserrat-regular);
+    background-color: var(--Grey-50, #fff5ed);
+}
+
+html body p {
+    margin: 0;
+}
+
+html body a {
+    text-decoration: none;
+}
+
+html body a:hover {
+    text-decoration: underline;
+}
+
+html body header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--Grey-700);
+}
+
+
+
+.container-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}

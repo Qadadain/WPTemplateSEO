@@ -46,13 +46,11 @@ header .top-header > div {
 .site-nav ul li a {
     padding: 12px 24px;
     text-decoration: none;
-    color: var(--Grey-50);
 }
 
 .site-nav ul li a.active, .site-nav ul li a:hover {
-    color: var(--Grey-50);
-    background-color: var(--Grey-400);
-    border-bottom: 2px solid var(--Grey-50);
+
+    border-bottom: 2px solid;
     box-sizing: border-box;
     text-decoration: none;
 }
@@ -65,7 +63,6 @@ header .top-header > div {
 #burger div {
     width: 35px;
     height: 3px;
-    background-color: var(--Grey-50);
     margin: 6px 0;
 }
 

@@ -1,28 +1,5 @@
-@import "./fonts/drsugiyama.css";
-@import "./fonts/montserrat.css";
+
 
 :root {
-    --Grey-50: #EAE6D3;
-    --Grey-100: #C8BFA8;
-    --Grey-200: #A2967C;
-    --Grey-300: #7D7052;
-    --Grey-400: #645736;
-    --Grey-500: #4B3F1D;
-    --Grey-600: #4B3F1D;
-    --Grey-700: #382D13;
-    --Grey-900: #241800;
-    --black-200: #D4D4D4;
-    --black-400: #939393;
-    --black-500: #707070;
-    --black-600: #4B4B4B;
-    --black-700: #3B3B3B;
-    --black-800: #222222;
-    --black-900: #000000;
-    --blue-100: #B2D3EA;
-    --blue-500: #3E6C8D;
-    --blue-900: #0C293A;
-    --dr-sugiyama: 'DrSugiyama', sans-serif;
-    --montserrat-regular: 'Montserrat Regular', sans-serif;
-    --montserrat-semibold: 'Montserrat SemiBold', sans-serif;
-    --montserrat-bold: 'Montserrat Bold', sans-serif;
+
 }

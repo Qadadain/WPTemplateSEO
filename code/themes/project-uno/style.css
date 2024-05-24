@@ -16,8 +16,6 @@ html {
 
 html body {
     margin: 0;
-    font-family: var(--montserrat-regular);
-    background-color: var(--Grey-50, #fff5ed);
 }
 
 html body p {
@@ -35,7 +33,6 @@ html body a:hover {
 html body header {
     display: flex;
     justify-content: center;
-    background-color: var(--Grey-700);
 }
 
 

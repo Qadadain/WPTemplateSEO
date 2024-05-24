@@ -113,7 +113,6 @@ function filter_wpseo_metadesc($wpseo_replace_vars)
 add_filter('wpseo_robots', 'filter_wpseo_robots', 10, 1);
 add_filter('wpseo_title', 'filter_wpseo_title', 10, 1);
 add_filter('wpseo_metadesc', 'filter_wpseo_metadesc', 10, 1);
-add_filter('wpseo_metadesc', 'custom_category_description_as_meta', 10, 1);
 
 
 function add_linebreak_shortcode() {

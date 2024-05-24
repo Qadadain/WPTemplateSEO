@@ -1,6 +1,4 @@
 footer {
-    background-color: var(--Grey-700);
-    color: var(--Grey-50);
     padding: 36px;
     text-align: start;
     min-width: 375px;
@@ -35,25 +33,18 @@ footer .footer-container .footer-section div {
 }
 
 footer .footer-container .footer-section div a {
-    font-family: var(--montserrat-semibold);
     font-size: 16px;
     padding: 4px 0;
-    color: var(--Grey-50);
     text-decoration: none;
 }
 
-footer .footer-container .footer-section div a:hover {
-    color: var(--Grey-200);
-}
 
 footer .footer-container .footer-section div .section-title {
-    font-family: var(--dr-sugiyama);
     font-size: 36px;
 }
 
 footer .footer-container .footer-section div .description {
     text-align: justify;
-    font-family: var(--montserrat-regular);
     font-size: 16px;
     line-height: 26px;
     display: flex;

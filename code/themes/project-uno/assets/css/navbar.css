@@ -4,7 +4,9 @@
 }
 
 header {
+    background-color: var(--white);
     min-width: 375px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -13,6 +15,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 99;
+    padding: 30px;
 }
 
 header .top-header {
@@ -98,4 +101,8 @@ header .top-header > div {
         display: block;
         width: 100%;
     }
+}
+
+.mt-fixed {
+    margin-top: 120px;
 }

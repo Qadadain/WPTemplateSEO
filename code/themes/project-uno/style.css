@@ -16,6 +16,7 @@ html {
 
 html body {
     margin: 0;
+    background-color: var(--background-color);
 }
 
 html body p {

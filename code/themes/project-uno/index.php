@@ -41,11 +41,16 @@ $latest_posts = get_posts([
             </section>
             <aside>
                 <div class="sticky-aside">
-                aside
-
+                    <div>
+                    <h3>Catégories</h3>
+                    <?php
+                    $categories = get_categories();
+                    foreach ($categories as $category) {
+                        echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+                    }
+                    ?>
+                    </div>
                 </div>
-                <?php //ICI sidebar ?>
-
             </aside>
         </div>
         <section>

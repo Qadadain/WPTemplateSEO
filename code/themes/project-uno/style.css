@@ -8,6 +8,7 @@ Text Domain: qy1
 @import "assets/css/variables.css";
 @import "assets/css/navbar.css";
 @import "assets/css/footer.css";
+@import "assets/css/home.css";
 
 
 html {
@@ -36,6 +37,9 @@ html body header {
     justify-content: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+}
 
 
 .container-404 {

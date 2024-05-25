@@ -1,0 +1,116 @@
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 60px 10px;
+}
+
+.home-container > section {
+    flex: 1 1 70%;
+    padding: 10px;
+}
+
+.home-container > section > div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.home-container > section > div > article {
+    background-color: var(--white);
+}
+
+.home-container > section > div > .big-article {
+    grid-column: span 3;
+}
+
+.home-container > section > div > .medium-article {
+    grid-column: span 2;
+}
+
+.home-container > section > div > article > .header-article,
+.home-container > section > div > article > .footer-article {
+    padding: 30px;
+}
+
+.home-container > section > div > article > .header-article > .category > span {
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.home-container > section > div > article > .header-article > h2 {
+    font-size: 1.2rem;
+}
+
+.home-container > section > div > article > figure > img {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+
+}
+
+.home-container > aside > .sticky-aside {
+    position: sticky;
+    top: 125px;
+}
+
+.home-container > aside {
+    flex: 1 1 25%;
+    max-width: 300px;
+    padding: 10px;
+}
+
+@media (max-width: 1001px) {
+    .home-container {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .home-container > section,
+    .home-container > aside {
+        flex: 1 1 100%;
+        max-width: none;
+        padding: 10px;
+    }
+
+    .home-container > section > div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .home-container > section > div > .big-article {
+        grid-column: span 2;
+    }
+
+    .home-container > section > div > .medium-article {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        padding: 10px 5px;
+        gap: 10px;
+    }
+
+    .home-container > section > div {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .home-container > section > div > .big-article,
+    .home-container > section > div > .medium-article {
+        grid-column: span 1;
+    }
+
+    .home-container > section > div > article > .header-article,
+    .home-container > section > div > article > .footer-article {
+        padding: 15px;
+    }
+}

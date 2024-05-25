@@ -23,6 +23,7 @@ $latest_posts = get_posts([
                         }
                         ?>
                         <article class="<?php echo $article_class; ?>">
+                            <a href="<?php echo get_permalink($post); ?>">
                             <div class="header-article">
                                 <div class="category">
                                     <span><?php echo get_the_category($post->ID)[0]->cat_name; ?></span>
@@ -35,6 +36,7 @@ $latest_posts = get_posts([
                             <div class="footer-article">
                                 <?php echo get_the_excerpt($post); ?>
                             </div>
+                            </a>
                         </article>
                     <?php endforeach; ?>
                 </div>

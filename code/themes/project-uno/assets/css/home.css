@@ -31,12 +31,18 @@
     grid-column: span 2;
 }
 
-.home-container > section > div > article > .header-article,
-.home-container > section > div > article > .footer-article {
+.home-container > section > div > article > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-container > section > div > article > a > .header-article,
+.home-container > section > div > article > a > .footer-article {
     padding: 20px;
 }
 
-.home-container > section > div > article > .header-article > .category > span {
+.home-container > section > div > article > a > .header-article > .category > span {
     font-size: 14px;
     color: var(--white);
     background-color: var(--primary-color);
@@ -44,11 +50,11 @@
     border-radius: 5px;
 }
 
-.home-container > section > div > article > .header-article > h2 {
+.home-container > section > div > article > a > .header-article > h2 {
     font-size: 1.2rem;
 }
 
-.home-container > section > div > article > figure > img {
+.home-container > section > div > article > a > figure > img {
     max-width: 100%;
     width: 100%;
     object-fit: cover;

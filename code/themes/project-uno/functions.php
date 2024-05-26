@@ -14,7 +14,16 @@ function parent_enqueue_scripts()
 
 add_action('wp_enqueue_scripts', 'parent_enqueue_scripts');
 
+function my_theme_enqueue_styles() {
+    if (is_single()) {
+        wp_enqueue_style('my-custom-style', get_stylesheet_directory_uri() . '/assets/css/post-view.css', array(), '1.0.0');
+    }
 
+    if (is_home()) {
+        wp_enqueue_style('my-custom-style', get_stylesheet_directory_uri() . '/assets/css/home.css', array(), '1.0.0');
+    }
+}
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 

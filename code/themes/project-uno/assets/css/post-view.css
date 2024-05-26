@@ -1,0 +1,38 @@
+.section-post {
+    max-width: 680px;
+    padding: 60px;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+/* select image in section post */
+
+
+.section-post figure {
+    margin: 2rem 0 !important;
+}
+
+.section-post article .content {
+    display: contents;
+    color: #000;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.section-post article .content h2, .section-post article .content h3, .section-post article .content h4, .section-post article .content h5, .section-post article .content h6, .section-post p {
+    margin-bottom: 12px !important;
+}
+
+.section-post img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}

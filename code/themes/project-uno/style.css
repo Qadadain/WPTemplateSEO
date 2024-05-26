@@ -36,6 +36,10 @@ html body header {
     justify-content: center;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }

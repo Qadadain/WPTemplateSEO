@@ -21,36 +21,20 @@ $latest_posts = get_posts([
                         } else {
                             $article_class = "medium-article";
                         }
-                        ?>
-                        <article class="<?php echo $article_class; ?>">
-                            <a href="<?php echo get_permalink($post); ?>">
-                            <div class="header-article">
-                                <div class="category">
-                                    <span><?php echo get_the_category($post->ID)[0]->cat_name; ?></span>
-                                </div>
-                                <h2><?php echo $post->post_title; ?></h2>
-                            </div>
-                            <figure class="figure">
-                                <img src="<?php echo get_the_post_thumbnail_url($post); ?>" alt="<?php echo $post->post_title; ?>">
-                            </figure>
-                            <div class="footer-article">
-                                <?php echo get_the_excerpt($post); ?>
-                            </div>
-                            </a>
-                        </article>
-                    <?php endforeach; ?>
+                        include 'Components/card.php';
+                    endforeach; ?>
                 </div>
             </section>
             <aside>
                 <div class="sticky-aside">
                     <div>
-                    <h3>Catégories</h3>
-                    <?php
-                    $categories = get_categories();
-                    foreach ($categories as $category) {
-                        echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
-                    }
-                    ?>
+                        <h3>Catégories</h3>
+                        <?php
+                        $categories = get_categories();
+                        foreach ($categories as $category) {
+                            echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+                        }
+                        ?>
                     </div>
                 </div>
             </aside>

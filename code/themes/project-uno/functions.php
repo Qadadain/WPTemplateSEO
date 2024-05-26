@@ -1,5 +1,5 @@
 <?php
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 
 add_action('wp_enqueue_scripts', 'parent_enqueue_styles');
 function parent_enqueue_styles()
@@ -14,7 +14,8 @@ function parent_enqueue_scripts()
 
 add_action('wp_enqueue_scripts', 'parent_enqueue_scripts');
 
-function my_theme_enqueue_styles() {
+function my_theme_enqueue_styles()
+{
     if (is_single()) {
         wp_enqueue_style('my-custom-style', get_stylesheet_directory_uri() . '/assets/css/post-view.css', array(), '1.0.0');
     }
@@ -28,11 +29,12 @@ function my_theme_enqueue_styles() {
     }
 
 }
+
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
-
-function remove_default_image_sizes($sizes) {
+function remove_default_image_sizes($sizes)
+{
     unset($sizes['thumbnail']);
     unset($sizes['medium']);
     unset($sizes['medium_large']);
@@ -43,10 +45,12 @@ function remove_default_image_sizes($sizes) {
 
 add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
 
-function custom_excerpt_length( $length ) {
+function custom_excerpt_length($length)
+{
     return 29;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
 function get_page_number(): string
 {
@@ -129,9 +133,11 @@ add_filter('wpseo_title', 'filter_wpseo_title', 10, 1);
 add_filter('wpseo_metadesc', 'filter_wpseo_metadesc', 10, 1);
 
 
-function add_linebreak_shortcode() {
+function add_linebreak_shortcode()
+{
     return '<br />';
 }
-add_shortcode('br', 'add_linebreak_shortcode' );
 
-add_filter( 'wpseo_canonical', '__return_false' );
+add_shortcode('br', 'add_linebreak_shortcode');
+
+add_filter('wpseo_canonical', '__return_false');

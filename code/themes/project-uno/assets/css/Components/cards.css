@@ -46,4 +46,8 @@ article > a > figure > img {
     .medium-article {
         grid-column: span 2;
     }
+
+    .big-article.post-list {
+        grid-column: span 9;
+    }
 }

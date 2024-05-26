@@ -1,0 +1,49 @@
+article {
+    background-color: var(--white);
+}
+
+.big-article {
+    grid-column: span 3;
+}
+
+.medium-article {
+    grid-column: span 2;
+}
+
+article > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+article > a > .header-article,
+article > a > .footer-article {
+    padding: 20px;
+}
+
+article > a > .header-article > .category > span {
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+article > a > .header-article > h2 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+article > a > figure > img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+@media (max-width: 1001px) {
+    .big-article,
+    .medium-article {
+        grid-column: span 2;
+    }
+}

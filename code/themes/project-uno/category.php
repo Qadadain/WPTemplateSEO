@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div class="mt-fixed">
+    <main class="mt-fixed">
 
-    </div>
+    </main>
 <?php get_footer();

@@ -11,8 +11,6 @@ h1 {
     font-weight: 700;
     margin-bottom: 24px;
 }
-/* select image in section post */
-
 
 .section-post figure {
     margin: 2rem 0 !important;
@@ -25,6 +23,16 @@ h1 {
     line-height: 150%;
 }
 
+.section-post article .content a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.section-post article .content a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 .section-post article .content h2, .section-post article .content h3, .section-post article .content h4, .section-post article .content h5, .section-post article .content h6, .section-post p {
     margin-bottom: 12px !important;
 }
@@ -35,4 +43,17 @@ h1 {
     max-width: 100%;
     object-fit: cover;
     aspect-ratio: 16/9;
+}
+
+
+@media (max-width: 600px) {
+    .section-post {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
 }

@@ -34,6 +34,10 @@ article > a > .header-article > h2 {
     margin-top: 20px;
 }
 
+article:hover h2 {
+    color: var(--primary-color);
+}
+
 article > a > figure > img {
     max-width: 100%;
     width: 100%;

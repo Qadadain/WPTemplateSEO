@@ -42,11 +42,27 @@
     flex-direction: column;
 }
 
-.home-container > aside > .sticky-aside > div > a {
-    color: black;
+.home-container > aside > .sticky-aside > div > h3 {
+    margin-bottom: 10px;
+}
+
+.home-container > aside > .sticky-aside > div > .category > a,
+.home-container > aside > .sticky-aside > div > .category > ul > li  > a
+{
+    color: var(--primary-color);
     margin-top: 5px;
     transition: color 0.3s;
 }
+
+.home-container > aside > .sticky-aside > div > .category > ul > li
+{
+    margin-bottom: 5px;
+}
+.home-container > aside > .sticky-aside > div > .category > ul {
+    list-style-type: none;
+    padding-left: 7px;
+}
+
 
 .home-container > aside > .sticky-aside > div > a:hover {
     text-decoration: none;

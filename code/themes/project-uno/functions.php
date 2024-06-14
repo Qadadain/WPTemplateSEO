@@ -57,7 +57,8 @@ function get_page_number(): string
     return (get_query_var('paged')) ? get_query_var('paged') : 1;
 }
 
-function blog_pagination($category_slug = '', $posts_per_page = 12) {
+function blog_pagination($category_slug = '', $posts_per_page = 12)
+{
     global $wp_query;
 
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
@@ -165,7 +166,8 @@ add_filter('wpseo_robots', 'filter_wpseo_robots', 10, 1);
 add_filter('wpseo_title', 'filter_wpseo_title', 10, 1);
 add_filter('wpseo_metadesc', 'filter_wpseo_metadesc', 10, 1);
 
-function get_custom_category_posts($category_slug) {
+function get_custom_category_posts($category_slug)
+{
     $category = get_category_by_slug($category_slug);
     if (!$category) {
         return [];
@@ -200,3 +202,13 @@ function get_custom_category_posts($category_slug) {
     $query = new WP_Query($args);
     return $query;
 }
+
+
+function dequeue_wp_default_styles_and_scripts()
+{
+    if (!is_user_logged_in()) {
+        wp_dequeue_style('wp-block-library');
+    }
+}
+
+add_action('wp_enqueue_scripts', 'dequeue_wp_default_styles_and_scripts', 100); // Use a high priority to ensure it runs after enqueuing

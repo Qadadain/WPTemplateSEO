@@ -1,8 +1,12 @@
-
+@import "fonts/roboto.css";
 
 :root {
     --white: #fff;
     --background-color: #FAFBFC;
+    --black: #000;
     --primary-color: #FF5A5F;
     --secondary-color: #00A699;
+    --roboto-regular: 'Roboto Regular', sans-serif;
+    --roboto-medium: 'Roboto Medium', sans-serif;
+    --roboto-bold: 'Roboto Bold', sans-serif;
 }

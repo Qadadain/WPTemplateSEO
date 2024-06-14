@@ -24,7 +24,7 @@ h1 {
 }
 
 .section-post article .content a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 

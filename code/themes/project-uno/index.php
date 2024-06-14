@@ -30,9 +30,28 @@ $latest_posts = get_posts([
                     <div>
                         <h3>Catégories</h3>
                         <?php
-                        $categories = get_categories();
+                        $categories = get_categories(array(
+                            'parent' => 0
+                        ));
                         foreach ($categories as $category) {
+                            echo '<div class="category">';
                             echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+
+                            // Récupérer les sous-catégories
+                            $subcategories = get_categories(array(
+                                'child_of' => $category->term_id,
+                                'hide_empty' => 0
+                            ));
+
+                            if ($subcategories) {
+                                echo '<ul>';
+                                foreach ($subcategories as $subcategory) {
+                                    echo '<li><a href="' . get_category_link($subcategory->term_id) . '">' . $subcategory->name . '</a></li>';
+                                }
+                                echo '</ul>';
+                            }
+
+                            echo '</div>';
                         }
                         ?>
                     </div>

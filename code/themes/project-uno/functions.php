@@ -57,19 +57,51 @@ function get_page_number(): string
     return (get_query_var('paged')) ? get_query_var('paged') : 1;
 }
 
-function blog_pagination($params = [])
-{
+function blog_pagination($category_slug = '', $posts_per_page = 12) {
     global $wp_query;
 
-    $paged = get_page_number();
-    $searchParam = array_merge([
-        'post_type' => 'post',
-        'post_status' => 'publish',
-        'paged' => $paged,
-    ], $params);
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
-    $wp_query = new WP_Query($searchParam);
+    if ($category_slug) {
+        $category = get_category_by_slug($category_slug);
+        if (!$category) {
+            return;
+        }
 
+        $is_parent_category = get_term_children($category->term_id, 'category');
+
+        $args = [
+            'posts_per_page' => $posts_per_page,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'paged' => $paged,
+        ];
+
+        if ($is_parent_category) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => 'category',
+                    'field' => 'term_id',
+                    'terms' => array_merge([$category->term_id], get_term_children($category->term_id, 'category'))
+                ]
+            ];
+        } else {
+            $args['cat'] = $category->term_id;
+        }
+    } else {
+        $args = [
+            'posts_per_page' => $posts_per_page,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'paged' => $paged,
+        ];
+    }
+
+    $wp_query = new WP_Query($args);
 
     $posts_pagination = get_the_posts_pagination([
         'mid_size' => 1,
@@ -86,6 +118,7 @@ function blog_pagination($params = [])
         echo preg_replace('~(<h2\\s(class="screen-reader-text")(.*)[$>])(.*)(</h2>)~ui', '', $posts_pagination);
     }
 }
+
 
 add_theme_support('title-tag');
 
@@ -132,12 +165,38 @@ add_filter('wpseo_robots', 'filter_wpseo_robots', 10, 1);
 add_filter('wpseo_title', 'filter_wpseo_title', 10, 1);
 add_filter('wpseo_metadesc', 'filter_wpseo_metadesc', 10, 1);
 
+function get_custom_category_posts($category_slug) {
+    $category = get_category_by_slug($category_slug);
+    if (!$category) {
+        return [];
+    }
+    $paged = get_page_number();
 
-function add_linebreak_shortcode()
-{
-    return '<br />';
+
+    $is_parent_category = get_term_children($category->term_id, 'category');
+
+    $args = [
+        'numberposts' => 12,
+        'category' => $category->term_id,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'paged' => $paged
+    ];
+
+    if ($is_parent_category) {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'category',
+                'field' => 'term_id',
+                'terms' => array_merge([$category->term_id], get_term_children($category->term_id, 'category'))
+            ]
+        ];
+    } else {
+        $args['cat'] = $category->term_id;
+    }
+
+    $query = new WP_Query($args);
+    return $query;
 }
-
-add_shortcode('br', 'add_linebreak_shortcode');
-
-add_filter('wpseo_canonical', '__return_false');

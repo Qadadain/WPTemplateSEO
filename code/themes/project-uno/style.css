@@ -20,10 +20,12 @@ html body {
 }
 
 html body p {
+    font-family: var(--roboto-regular);
     margin: 0;
 }
 
 html body a {
+    font-family: var(--roboto-medium);
     text-decoration: none;
 }
 
@@ -41,6 +43,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family:  var(--roboto-bold);
     margin: 0;
 }
 

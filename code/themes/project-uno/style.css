@@ -6,7 +6,7 @@ Description: This is à web app for ...
 Text Domain: qy1
 */
 @import "assets/css/variables.css";
-@import "assets/css/navbar.css";
+@import "assets/css/header.css";
 @import "assets/css/footer.css";
 
 
@@ -52,4 +52,28 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     flex-direction: column;
     height: 50vh;
+}
+
+.page-content {
+    max-width: 1154px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.page-content p {
+    margin-bottom: 15px;
+    line-height: 166%;
+}
+
+.page-content li {
+    line-height: 150%;
+    margin-bottom: 10px;
+}
+
+.page-content a {
+    text-decoration: none;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
 }

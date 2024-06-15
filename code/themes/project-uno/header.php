@@ -11,7 +11,7 @@
 <!-- Google Tag Manager (noscript) -->
 <header class="header">
     <div>
-        <a href="" class="logo">CSS Nav</a>
+        <a href="" class="logo">Logo</a>
         <input class="menu-btn" type="checkbox" id="menu-btn"/>
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">

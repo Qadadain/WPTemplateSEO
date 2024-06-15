@@ -15,7 +15,7 @@
                 <p class="section-title">Contact</p>
             </div>
             <div class="sitemap">
-                <a href="#">Formulaire de contact</a>
+                <a href="/contact/">Formulaire de contact</a>
                 <a href="mailto:<?php echo get_bloginfo( 'admin_email' ); ?>"><?php echo get_bloginfo( 'admin_email' ); ?></a>
             </div>
         </div>
@@ -24,10 +24,10 @@
                 <p class="section-title">À propos</p>
             </div>
             <div class="sitemap">
-                <a href="#">Politique de confidentialité</a>
-                <a href="#">Mentions légales</a>
-                <a href="#">CGU</a>
-                <a href="#">Charte cookies</a>
+                <a href="/politique-de-confidentialite/">Politique de confidentialité</a>
+                <a href="/mentions-legales/">Mentions légales</a>
+                <a href="/cgu/">CGU</a>
+                <a href="/charte-cookies/">Charte cookies</a>
             </div>
         </div>
     </div>

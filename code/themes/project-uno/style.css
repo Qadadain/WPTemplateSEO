@@ -33,11 +33,6 @@ html body a:hover {
     text-decoration: underline;
 }
 
-html body header {
-    display: flex;
-    justify-content: center;
-}
-
 a:hover {
     text-decoration: none !important;
 }

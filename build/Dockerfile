@@ -1,5 +1,7 @@
 FROM php:8.2-fpm-alpine3.18
 
+ARG WORDPRESS_DOWNLOAD_URL
+
 USER root
 
 WORKDIR /
@@ -46,7 +48,7 @@ COPY ./build/nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /var/www/html/
 WORKDIR /var/www/html
 
-RUN curl -sLfo wordpress.tar.gz https://fr.wordpress.org/wordpress-6.5.4-fr_FR.tar.gz \
+RUN curl -sLfo wordpress.tar.gz ${WORDPRESS_DOWNLOAD_URL} \
  && tar -xvkf wordpress.tar.gz --strip-components=1 \
  && rm wordpress.tar.gz
 

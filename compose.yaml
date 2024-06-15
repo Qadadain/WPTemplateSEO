@@ -6,6 +6,8 @@ services:
     web:
         build:
             context: .
+            args:
+                - WORDPRESS_DOWNLOAD_URL=${WORDPRESS_DOWNLOAD_URL}
             dockerfile: ./build/Dockerfile
         volumes:
             - ./code/config/wp-config.php:/var/www/html/wp-config.php:ro

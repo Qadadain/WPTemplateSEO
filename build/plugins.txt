@@ -1,3 +1,4 @@
 https://downloads.wordpress.org/plugin/wordpress-seo.22.8.zip
 https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip
+https://downloads.wordpress.org/plugin/wpforms-lite.1.8.9.1.zip
 https://downloads.wordpress.org/plugin/performance-lab.3.2.0.zip

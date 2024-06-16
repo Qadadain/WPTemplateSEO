@@ -2,11 +2,11 @@
     <div class="footer-container">
         <div class="footer-section">
             <div>
-                <p class="section-title"><?php echo get_bloginfo( 'name' ); ?></p>
+                <p class="section-title"><?php echo get_bloginfo('name'); ?></p>
             </div>
             <div>
                 <p class="description">
-                    <?php echo get_bloginfo( 'description' ); ?>
+                    <?php echo get_bloginfo('description'); ?>
                 </p>
             </div>
         </div>
@@ -16,7 +16,7 @@
             </div>
             <div class="sitemap">
                 <a href="/contact/">Formulaire de contact</a>
-                <a href="mailto:<?php echo get_bloginfo( 'admin_email' ); ?>"><?php echo get_bloginfo( 'admin_email' ); ?></a>
+                <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('admin_email'); ?></a>
             </div>
         </div>
         <div class="footer-section">

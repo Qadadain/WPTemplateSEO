@@ -2,6 +2,7 @@ footer {
     padding: 36px;
     text-align: start;
     min-width: 375px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
 }
 
 footer .footer-container {

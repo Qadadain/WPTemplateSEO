@@ -13,6 +13,8 @@
         </figure>
         <div class="footer-article">
             <?php echo get_the_excerpt($post); ?>
+            <br>
+            <time class="time-card"><?php echo get_the_date('j M Y', $post->ID);  ?></time>
         </div>
     </a>
 </article>

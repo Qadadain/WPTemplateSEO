@@ -18,10 +18,12 @@ article > a {
 
 article > a > .header-article,
 article > a > .footer-article {
+    font-family: var(--roboto-regular);
     padding: 20px;
 }
 
 article > a > .header-article > .category > span {
+    font-family: var(--roboto-regular);
     font-size: 14px;
     color: var(--white);
     background-color: var(--primary-color);
@@ -43,6 +45,37 @@ article > a > figure > img {
     width: 100%;
     object-fit: cover;
     aspect-ratio: 16/9;
+}
+
+.time-card {
+    margin-top: 15px;
+    display: flex;
+}
+
+.small-article > a > div > figure > img {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+}
+
+.small-article > a {
+    display: flex;
+}
+
+.small-article > a > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0 15px 15px;
+}
+
+.small-article > a > div:last-child > h2 {
+    font-size: 15px;
+}
+
+.small-article > a > div:last-child > time {
+    font-size: 12px;
+    font-family: var(--roboto-regular);
 }
 
 @media (max-width: 1001px) {

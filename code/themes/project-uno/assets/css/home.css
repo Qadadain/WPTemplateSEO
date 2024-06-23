@@ -11,8 +11,7 @@
 }
 
 .home-container > section {
-    flex: 1 1 70%;
-    padding: 10px;
+    flex: 1 1 68%;
 }
 
 .home-container > section > div {
@@ -23,8 +22,6 @@
 
 .home-container > aside {
     flex: 1 1 25%;
-    max-width: 300px;
-    padding: 10px;
 }
 
 .home-container > aside > .sticky-aside {

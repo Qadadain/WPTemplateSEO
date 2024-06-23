@@ -14,11 +14,20 @@
         <a href="" class="logo">Logo</a>
         <input class="menu-btn" type="checkbox" id="menu-btn"/>
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <?php
+        $categories = get_categories( array(
+            'orderby' => 'name',
+            'parent'  => 0
+        ) ); ?>
         <ul class="menu">
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <?php
+        foreach ( $categories as $category ) {
+            printf( '<li><a href="%1$s">%2$s</a></li>',
+                esc_url( get_category_link( $category->term_id ) ),
+                esc_html( $category->name )
+            );
+        }
+        ?>
         </ul>
     </div>
 </header>

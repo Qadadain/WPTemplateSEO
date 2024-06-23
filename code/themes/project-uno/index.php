@@ -28,32 +28,19 @@ $latest_posts = get_posts([
             <aside>
                 <div class="sticky-aside">
                     <div>
-                        <h3>Catégories</h3>
+                        <h3>Articles</h3>
                         <?php
-                        $categories = get_categories(array(
-                            'parent' => 0
-                        ));
-                        foreach ($categories as $category) {
-                            echo '<div class="category">';
-                            echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+                        $latest_posts = get_posts([
+                            'numberposts' => 5, // change this to 5
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                            'post_type' => 'post',
+                            'post_status' => 'publish'
+                        ]);
+                        foreach ($latest_posts as $post):
+                            include 'Components/small-card.php';
+                        endforeach; ?>
 
-                            // Récupérer les sous-catégories
-                            $subcategories = get_categories(array(
-                                'child_of' => $category->term_id,
-                                'hide_empty' => 0
-                            ));
-
-                            if ($subcategories) {
-                                echo '<ul>';
-                                foreach ($subcategories as $subcategory) {
-                                    echo '<li><a href="' . get_category_link($subcategory->term_id) . '">' . $subcategory->name . '</a></li>';
-                                }
-                                echo '</ul>';
-                            }
-
-                            echo '</div>';
-                        }
-                        ?>
                     </div>
                 </div>
             </aside>

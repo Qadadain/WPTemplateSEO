@@ -9,6 +9,7 @@
     position: fixed;
     width: 100%;
     z-index: 3;
+    padding: 10px;
 }
 
 .header div {
@@ -39,8 +40,11 @@
     display: block;
     float: left;
     font-size: 2em;
-    padding: 10px 20px;
     text-decoration: none;
+}
+
+.header .logo img {
+    height: 51px;
 }
 
 .header .menu {

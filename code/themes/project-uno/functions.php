@@ -166,42 +166,36 @@ add_filter('wpseo_robots', 'filter_wpseo_robots', 10, 1);
 add_filter('wpseo_title', 'filter_wpseo_title', 10, 1);
 add_filter('wpseo_metadesc', 'filter_wpseo_metadesc', 10, 1);
 
-function get_custom_category_posts($category_slug)
-{
+function get_custom_category_posts($category_slug) {
     $category = get_category_by_slug($category_slug);
     if (!$category) {
-        return [];
+        return new WP_Query(); // Retourne une instance WP_Query vide
     }
-    $paged = get_page_number();
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
-
-    $is_parent_category = get_term_children($category->term_id, 'category');
+    // Vérifier si la catégorie a des enfants
+    $child_categories = get_term_children($category->term_id, 'category');
 
     $args = [
-        'numberposts' => 12,
-        'category' => $category->term_id,
+        'posts_per_page' => 12, // Utiliser 'posts_per_page' au lieu de 'numberposts'
         'orderby' => 'date',
         'order' => 'DESC',
         'post_type' => 'post',
         'post_status' => 'publish',
-        'paged' => $paged
-    ];
-
-    if ($is_parent_category) {
-        $args['tax_query'] = [
+        'paged' => $paged,
+        'tax_query' => [
             [
                 'taxonomy' => 'category',
                 'field' => 'term_id',
-                'terms' => array_merge([$category->term_id], get_term_children($category->term_id, 'category'))
-            ]
-        ];
-    } else {
-        $args['cat'] = $category->term_id;
-    }
+                'terms' => $child_categories ? array_merge([$category->term_id], $child_categories) : [$category->term_id],
+                'include_children' => true,
+            ],
+        ],
+    ];
 
-    $query = new WP_Query($args);
-    return $query;
+    return new WP_Query($args);
 }
+
 
 
 function dequeue_wp_default_styles_and_scripts()
@@ -212,3 +206,31 @@ function dequeue_wp_default_styles_and_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'dequeue_wp_default_styles_and_scripts', 100); // Use a high priority to ensure it runs after enqueuing
+
+
+function get_breadcrumbs() {
+    $delimiter = ' / ';
+    $home = 'Accueil';
+    $baseLink = home_url();
+    $breadcrumb = '<nav class="breadcrumb"><a href="' . $baseLink . '">' . $home . '</a>';
+
+    if (is_category()) {
+        $category = get_queried_object();
+        $breadcrumb .= $delimiter . '<span class="current">' . $category->name . '</span>';
+    } elseif (is_single()) {
+        $categories = get_the_category();
+        if ($categories) {
+            usort($categories, function($a, $b) {
+                return $a->parent - $b->parent;
+            });
+
+            foreach ($categories as $category) {
+                $breadcrumb .= $delimiter . '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
+            }
+        }
+        $breadcrumb .= $delimiter . '<span class="current">' . get_the_title() . '</span>';
+    }
+
+    $breadcrumb .= '</nav>';
+    echo $breadcrumb;
+}

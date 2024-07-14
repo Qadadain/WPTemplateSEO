@@ -1,6 +1,5 @@
 @import "Components/cards.css";
 
-
 .category-container {
     display: flex;
     flex-wrap: wrap;
@@ -11,9 +10,37 @@
     padding: 60px 10px;
 }
 
-
-.category-container > section > div {
+.category-container > section > div.post-grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.nav-links > a, .nav-links > span {
+    background-color: white;
+    font-family: var(--roboto-regular);
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-font: var(--roboto-regular);
+    transition: color 0.3s;
+}
+
+.nav-links > span {
+    font-family: var(--roboto-regular);
+}
+
+.nav-links > a {
+    font-family: var(--roboto-medium);
+}
+
+.nav-links > a:hover {
+    color: var(--secondary-color);
 }

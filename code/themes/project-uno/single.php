@@ -1,6 +1,7 @@
 <?php get_header(); ?>
     <main class="mt-fixed">
         <section class="section-post">
+            <?php echo get_breadcrumbs(); ?>
             <article>
                 <div class="header-post">
                     <h1><?= get_the_title() ?></h1>
@@ -12,7 +13,6 @@
                 <section class="content">
                     <?php the_content(); ?>
                 </section>
-
             </article>
         </section>
     </main>

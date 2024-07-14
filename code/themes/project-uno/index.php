@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <?php
-// get latest posts
 $latest_posts = get_posts([
     'numberposts' => 10,
     'orderby' => 'date',
@@ -31,7 +30,7 @@ $latest_posts = get_posts([
                         <h3>Articles</h3>
                         <?php
                         $latest_posts = get_posts([
-                            'numberposts' => 5, // change this to 5
+                            'numberposts' => 5,
                             'orderby' => 'date',
                             'order' => 'DESC',
                             'post_type' => 'post',
@@ -40,16 +39,9 @@ $latest_posts = get_posts([
                         foreach ($latest_posts as $post):
                             include 'Components/small-card.php';
                         endforeach; ?>
-
                     </div>
                 </div>
             </aside>
         </div>
-        <section>
-            <div>
-                <?php //ICI Autres ?>
-
-            </div>
-        </section>
     </main>
 <?php get_footer();

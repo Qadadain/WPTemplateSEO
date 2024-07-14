@@ -1,14 +1,17 @@
-<?php get_header(); ?>
+<?php get_header();
+global $wp_query;
+$category_slug = $wp_query->query['category_name'];
+$query = get_custom_category_posts($category_slug);
+?>
 <main class="mt-fixed">
     <div class="category-container">
         <?php echo get_breadcrumbs(); ?>
+        <div class="cat-title">
+            <h1><?php single_cat_title(); ?></h1>
+        </div>
         <section>
             <div class="post-grid">
                 <?php
-                global $wp_query;
-                $category_slug = $wp_query->query['category_name'];
-                $query = get_custom_category_posts($category_slug);
-
                 if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post();
                         $article_class = "big-article post-list";

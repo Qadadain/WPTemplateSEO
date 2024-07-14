@@ -38,7 +38,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family:  var(--roboto-bold);
+    font-family: var(--roboto-bold);
     margin: 0;
 }
 
@@ -97,6 +97,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--roboto-bold);
     display: flex;
     justify-content: center;
+}
+
+
+.breadcrumb {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .breadcrumb a {

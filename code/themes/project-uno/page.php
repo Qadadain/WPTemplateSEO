@@ -3,8 +3,8 @@
         <div class="page-content">
             <?php echo get_breadcrumbs(); ?>
             <div class="page-title">
-            <h1><?= the_title() ?></h1>
-        </div>
+                <h1><?= the_title() ?></h1>
+            </div>
             <?php the_content(); ?>
         </div>
     </div>

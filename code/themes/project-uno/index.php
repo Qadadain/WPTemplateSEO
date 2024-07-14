@@ -11,6 +11,7 @@ $latest_posts = get_posts([
     <main class="mt-fixed">
         <div class="home-container">
             <section>
+            <h1><?= get_bloginfo('name') ?></h1>
                 <div>
                     <?php $counter = 0;
                     foreach ($latest_posts as $post):

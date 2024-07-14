@@ -11,7 +11,11 @@
 <!-- Google Tag Manager (noscript) -->
 <header class="header">
     <div>
-        <a href="" class="logo">Logo</a>
+        <div class="logo">
+            <?php if ( has_site_icon() ) : ?>
+                <img src="<?php echo esc_url( get_site_icon_url() ); ?>" alt="Icône du site">
+            <?php endif; ?>
+        </div>
         <input class="menu-btn" type="checkbox" id="menu-btn"/>
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <?php

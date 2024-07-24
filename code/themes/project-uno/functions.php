@@ -169,7 +169,7 @@ add_filter('wpseo_metadesc', 'filter_wpseo_metadesc', 10, 1);
 function get_custom_category_posts($category_slug) {
     $category = get_category_by_slug($category_slug);
     if (!$category) {
-        return new WP_Query(); // Retourne une instance WP_Query vide
+        return new WP_Query();
     }
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
@@ -177,7 +177,7 @@ function get_custom_category_posts($category_slug) {
     $child_categories = get_term_children($category->term_id, 'category');
 
     $args = [
-        'posts_per_page' => 12, // Utiliser 'posts_per_page' au lieu de 'numberposts'
+        'posts_per_page' => 12,
         'orderby' => 'date',
         'order' => 'DESC',
         'post_type' => 'post',
@@ -208,7 +208,7 @@ function dequeue_wp_default_styles_and_scripts()
 add_action('wp_enqueue_scripts', 'dequeue_wp_default_styles_and_scripts', 100); // Use a high priority to ensure it runs after enqueuing
 
 
-function get_breadcrumbs() {
+function breadcrumbs() {
     $delimiter = ' / ';
     $home = 'Accueil';
     $baseLink = home_url();
@@ -228,6 +228,8 @@ function get_breadcrumbs() {
                 $breadcrumb .= $delimiter . '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
             }
         }
+        $breadcrumb .= $delimiter . '<span class="current">' . get_the_title() . '</span>';
+    } elseif (is_page()) {
         $breadcrumb .= $delimiter . '<span class="current">' . get_the_title() . '</span>';
     }
 

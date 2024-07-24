@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <main class="mt-fixed">
         <section class="section-post">
-            <?php echo get_breadcrumbs(); ?>
+            <?php echo breadcrumbs(); ?>
             <article>
                 <div class="header-post">
                     <h1><?= get_the_title() ?></h1>

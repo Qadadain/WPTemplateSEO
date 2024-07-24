@@ -33,7 +33,7 @@ $latest_posts = get_posts([
                         $latest_posts = get_posts([
                             'numberposts' => 5,
                             'orderby' => 'date',
-                            'order' => 'DESC',
+                            'order' => 'ASC',
                             'post_type' => 'post',
                             'post_status' => 'publish'
                         ]);

@@ -5,7 +5,7 @@ $query = get_custom_category_posts($category_slug);
 ?>
 <main class="mt-fixed">
     <div class="category-container">
-        <?php echo get_breadcrumbs(); ?>
+        <?php echo breadcrumbs(); ?>
         <div class="cat-title">
             <h1><?php single_cat_title(); ?></h1>
         </div>

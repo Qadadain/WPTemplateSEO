@@ -56,3 +56,15 @@ h1 {
         margin-bottom: 24px;
     }
 }
+
+time {
+    font-family: var(--notosans-regular);
+}
+
+ul li {
+    font-family: var(--notosans-regular);
+}
+
+ul li strong {
+    font-family: var(--notosans-bold);
+}

@@ -1,6 +1,6 @@
-https://downloads.wordpress.org/plugin/wordpress-seo.23.1.zip
+https://downloads.wordpress.org/plugin/wordpress-seo.23.2.zip
 https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip
-https://downloads.wordpress.org/plugin/wpforms-lite.1.8.9.6.zip
-https://downloads.wordpress.org/plugin/cookie-law-info.3.2.5.zip
+https://downloads.wordpress.org/plugin/wpforms-lite.1.9.0.2.zip
+https://downloads.wordpress.org/plugin/cookie-law-info.3.2.6.zip
 https://downloads.wordpress.org/plugin/wp-maintenance-mode.2.6.11.zip
-https://downloads.wordpress.org/plugin/wp-mail-smtp.4.1.0.zip
+https://downloads.wordpress.org/plugin/wp-mail-smtp.4.1.1.zip

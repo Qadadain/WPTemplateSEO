@@ -24,21 +24,21 @@
 
 .nav-links > a, .nav-links > span {
     background-color: white;
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
     margin: 0 5px;
     padding: 10px 20px;
     font-size: 1.2rem;
     color: var(--primary-color);
-    font-font: var(--roboto-regular);
+    font-font: var(--notosans-regular);
     transition: color 0.3s;
 }
 
 .nav-links > span {
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
 }
 
 .nav-links > a {
-    font-family: var(--roboto-medium);
+    font-family: var(--notosans-medium);
 }
 
 .nav-links > a:hover {

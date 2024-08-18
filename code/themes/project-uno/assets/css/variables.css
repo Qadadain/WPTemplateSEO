@@ -1,4 +1,4 @@
-@import "fonts/roboto.css";
+@import "fonts/noto_sans.css";
 
 :root {
     --white: #fff;
@@ -6,7 +6,7 @@
     --black: #000;
     --primary-color: #31473A;
     --secondary-color: #296a18;
-    --roboto-regular: 'Roboto Regular', sans-serif;
-    --roboto-medium: 'Roboto Medium', sans-serif;
-    --roboto-bold: 'Roboto Bold', sans-serif;
+    --notosans-regular: 'Noto Sans Regular', sans-serif;
+    --notosans-medium: 'Noto Sans Medium', sans-serif;
+    --notosans-bold: 'Noto Sans Bold', sans-serif;
 }

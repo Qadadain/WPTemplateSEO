@@ -20,12 +20,12 @@ html body {
 }
 
 html body p {
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
     margin: 0;
 }
 
 html body a {
-    font-family: var(--roboto-medium);
+    font-family: var(--notosans-medium);
     text-decoration: none;
 }
 
@@ -38,7 +38,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--roboto-bold);
+    font-family: var(--notosans-bold);
     margin: 0;
 }
 
@@ -80,13 +80,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .wpforms-container {
     max-width: 500px;
-    font-family: var(--roboto-medium);
+    font-family: var(--notosans-medium);
 }
 
 .wpforms-submit {
     background-color: var(--primary-color) !important;
     color: var(--white);
-    font-family: var(--roboto-bold);
+    font-family: var(--notosans-bold);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-title {
-    font-family: var(--roboto-bold);
+    font-family: var(--notosans-bold);
     display: flex;
     justify-content: center;
     margin: 50px 0;
@@ -116,5 +116,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breadcrumb span {
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
 }

@@ -18,12 +18,12 @@ article > a {
 
 article > a > .header-article,
 article > a > .footer-article {
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
     padding: 20px;
 }
 
 article > a > .header-article > .category > span {
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
     font-size: 14px;
     color: var(--white);
     background-color: var(--primary-color);
@@ -75,7 +75,7 @@ article > a > figure > img {
 
 .small-article > a > div:last-child > time {
     font-size: 12px;
-    font-family: var(--roboto-regular);
+    font-family: var(--notosans-regular);
 }
 
 @media (max-width: 1001px) {

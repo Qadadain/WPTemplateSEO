@@ -43,8 +43,8 @@ footer .footer-container .footer-section div a:hover {
 
 
 footer .footer-container .footer-section div .section-title {
-    font-family: var(--roboto-medium);
-    font-size: 36px;
+    font-family: var(--notosans-medium);
+    font-size: 22px;
 }
 
 footer .footer-container .footer-section div .description {

@@ -24,7 +24,7 @@ services:
             - source: database_password
               target: DATABASE_PASSWORD_FILE
         ports:
-            - 8100:8080
+            - "8178:8080"
     db:
         image: docker.io/library/mysql:8-oracle
         volumes:
